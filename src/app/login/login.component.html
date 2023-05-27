@@ -1,0 +1,31 @@
+
+
+
+
+<form [formGroup]='loginform' (ngSubmit)="submitForm(loginform)">
+
+    <div *ngIf="error" class="alert alert-danger">
+      {{error}}
+     </div>
+
+     <label for="">email :</label>
+     <input formControlName="email" type="text" class="form-control mb-3">
+  
+       <div *ngIf="loginform.get('email')!.errors  &&  loginform.get('email')!.touched" class="alert border border-danger" role="alert">
+             <p *ngIf="loginform.get('email')!.hasError('required')">email is Required</p>
+             <p *ngIf="loginform.get('email')!.hasError('email')">email invalid</p>
+        </div>
+ 
+     <label for="">password :</label>
+     <input formControlName="password" type="password" class="form-control mb-3">
+ 
+     <div *ngIf="loginform.get('password')!.errors  &&  loginform.get('password')!.touched" class="alert border border-danger" role="alert">
+             <p *ngIf="loginform.get('password')!.hasError('required')">password is Required</p>
+             <p *ngIf="loginform.get('password')!.hasError('pattern')">password must include a-z from 3-10</p>
+          </div>
+ <p class="text-white">dont hav account? <a class="text-white" routerLink='/register' >register now</a></p>
+     <button class="btn btn-info float-right" type="submit" [disabled] ='loginform.invalid'>Login</button>
+ </form>
+ 
+
+

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+body
+{
+  background-color: #131722 !important ;
+  color: #fff !important;
+  font-family: 'Montserrat' , 'sans-serif' !important;
+}
+.brdr
+{
+    height: 1px;
+    background-color: #a8a8a83d;
+}
+.secondFontColor
+{
+ color: #949cd0 !important;
+}
+.vote
+{
+    background-color: #24baef !important;
+    padding: 5px;
+     top: 0;
+   
+}
+input{
+    background-color: transparent !important;
+    color: #fff !important;
+    border-color: #a8a8a83d !important;
+}

@@ -1,0 +1,37 @@
+
+
+ <div class="pb-5 w-75 m-auto">
+   <input  type="text" [(ngModel)]='term' class="form-control bg-tansparent">
+ </div>
+
+<div class="row">
+  <div class="col-md-4 py-5">
+    <div class="brdr w-25 mb-3"></div>
+    <h3>Trending <br> Movies <br> To Watch Right Now</h3>
+    <p class="secondFontColor py-2">Most Watched Movies by days</p>
+    <div class="brdr w-100 "></div>
+  </div>
+  <div *ngFor="let movie of trendingMovies|search:term" class="col-md-2">
+    <div class="movie position-relative">
+      <img [src]="imgPrefix+movie.poster_path"  class="w-75" alt="">
+       <h6 class="h5">{{movie.title}}{{movie.name}}</h6>
+       <div class="vote position-absolute">{{movie.vote_average}}</div>
+    </div>
+  </div>
+</div> 
+
+<div class="row">
+  <div class="col-md-4 py-5">
+    <div class="brdr w-25 mb-3"></div>
+    <h3>Trending <br> TV <br> To Watch Right Now</h3>
+    <p class="secondFontColor py-2">Most Watched Movies by days</p>
+    <div class="brdr w-100 "></div>
+  </div>
+  <div *ngFor="let tv of trendingTv" class="col-md-2">
+    <div class="tv position-relative">
+      <img [src]="imgPrefix+tv.poster_path"  class="w-75" alt="">
+       <h6 class="h5">{{tv.title}}{{tv.name}}</h6>
+       <div class="vote position-absolute">{{tv.vote_average}}</div>
+    </div>
+  </div>
+</div>  
